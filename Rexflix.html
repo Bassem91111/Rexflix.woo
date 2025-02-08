@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover {
+            color: #ff1a1a;
+        }
+        .right-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .account {
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .account:hover {
+            color: #ff1a1a;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            background: url('https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/zMrk2G3XsnfYKiIp1NEfdtvDyBH.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 50px;
+        }
+        .content {
+            max-width: 600px;
+        }
+        .content h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff1a1a;
+            color: white;
+        }
+        .continue-watching, .trending {
+            margin: 50px 20px;
+        }
+        .continue-watching h2, .trending h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .movie-list, .trending-list {
+            display: flex;
+            gap: 30px; /* Espacement un peu plus large */
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .movie-list img {
+            width: 300px;  /* Taille encore plus grande pour Continue Watching */
+            height: 200px; /* Taille encore plus grande pour Continue Watching */
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .trending-list img {
+            width: 200px; /* Taille ajustée à 200px de largeur */
+            height: 300px; /* Taille ajustée à 300px de hauteur */
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/29/25/77/292577a3a5f9d52e1bb4456bf70b0f0d.jpg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+            <div class="right-menu">
+                <input type="text" class="search" placeholder="Search...">
+                <div class="account">Account</div>
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="content">
+            <h1>Mulan</h1>
+            <p>Lorsque l’Empereur de Chine publie un décret stipulant qu’un homme de chaque famille du pays doit intégrer l’armée impériale pour combattre des envahisseurs...</p>
+            <div class="buttons">
+                <button class="btn">▶ Play</button>
+                <button class="btn">+ My List</button>
+            </div>
+        </div>
+    </div>
+    <div class="continue-watching">
+        <h2>Continue Watching</h2>
+        <div class="movie-list">
+            <img src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/87mebbBtoWzHV0kILgV6M7yIfun.jpg" alt="Movie 1">
+            <img src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/pxeqQX4qFQ0cVxPt5SWZENV5BH3.jpg" alt="Movie 2">
+            <img src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/2m1Mu0xPj4SikiqkaolTRUcNtWH.jpg" alt="Movie 3">
+            <img src="https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/wwARk7hRIfHfh2n2ubN6N7lvTne.jpg" alt="Movie 4">
+        </div>
+    </div>
+    <div class="trending">
+        <h2>FILMS EN TENDANCE</h2>
+        <div class="trending-list">
+            <img src="https://image.tmdb.org/t/p/w1280/kGl5474aH79BPKrKlg9JyNFzlls.jpg" alt="Trending 1">
+            <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/2f7RCPno3tu1jN1ucQr3NfwQxAm.jpg" alt="Trending 2">
+            <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/zdVxpaoQdpheQqWWd6b82eY9Pid.jpg" alt="Trending 3">
+            <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/8qCijVB6gYi25UbsEPuutbBIfD.jpg" alt="Trending 4">
+            <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/n43QnATXtsAXXdhvAEIBhZvqkx.jpg" alt="Trending 5">
+            <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg" alt="Trending 6">
+        </div>
+    </div>
+    
+</body>
+</html>
